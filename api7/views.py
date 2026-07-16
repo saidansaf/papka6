@@ -1,33 +1,41 @@
 from django.shortcuts import render
 from rest_framework import viewsets
-from .serializers import ProductSerializers
-from rest_framework.generics import ListAPIView, CreateAPIView, RetrieveAPIView, UpdateAPIView, DestroyAPIView, RetrieveUpdateAPIView
-from .models import Product
+from .models import Employee
+from .serializers import EmployeeSerializer
+from rest_framework.generics import ListAPIView,RetrieveAPIView,CreateAPIView,UpdateAPIView,DestroyAPIView,ListCreateAPIView,RetrieveUpdateAPIView,RetrieveDestroyAPIView,RetrieveUpdateDestroyAPIView.
 
-class ProductListAPIView(ListAPIView):
-    queryset = Product.objects.all()
-    serializer_class = ProductSerializers
+class EmployeeListAPIView(ListAPIView):
+    queryset = Employee.objects.all()
+    serializer_class = EmployeeSerializer
 
+class EmployeeRetrieveAPIView(RetrieveAPIView):
+    queryset = Employee.objects.all()
+    serializer_class = EmployeeSerializer
 
-class ProductCreateAPIView(CreateAPIView):
-    queryset = Product.objects.all()
-    serializer_class = ProductSerializers
+class EmployeeCreateAPIView(CreateAPIView):
+    queryset = Employee.objects.all()
+    serializer_class = EmployeeSerializer
 
+class EmployeeUpdateAPIView(UpdateAPIView):
+    queryset = Employee.objects.all()
+    serializer_class = EmployeeSerializer
 
-class ProductRetrieveAPIView(RetrieveAPIView):
-    queryset = Product.objects.all()
-    serializer_class = ProductSerializers
+class EmployeeDestroyAPIView(DestroyAPIView):
+    queryset = Employee.objects.all()
+    serializer_class = EmployeeSerializer
 
+class EmployeeListCreateAPIView(ListCreateAPIView):
+    queryset = Employee.objects.all()
+    serializer_class = EmployeeSerializer
 
-class ProductUpdateAPIView(UpdateAPIView):
-    queryset = Product.objects.all()
-    serializer_class = ProductSerializers
+class EmployeeRetrieveUpdateAPIView(RetrieveUpdateAPIView):
+    queryset = Employee.objects.all()
+    serializer_class = EmployeeSerializer
 
+class EmployeeRetrieveDestroyAPIView(RetrieveDestroyAPIView):
+    queryset = Employee.objects.all()
+    serializer_class = EmployeeSerializer
 
-class ProductDestroyAPIView(DestroyAPIView):
-    queryset = Product.objects.all()
-    serializer_class = ProductSerializers
-
-class ProductRetrieveUpdateAPIView(RetrieveUpdateAPIView):
-    queryset = Product.objects.all()
-    serializer_class = ProductSerializers
+class EmployeeRetrieveUpdateDestroyAPIView(RetrieveUpdateDestroyAPIView):
+    queryset = Employee.objects.all()
+    serializer_class = EmployeeSerializer
